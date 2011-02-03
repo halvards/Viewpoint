@@ -21,7 +21,8 @@ require 'handsoap'
 require 'soap/handsoap/builder'
 require 'soap/handsoap/parser'
 
-Handsoap.http_driver = :http_client
+#Handsoap.http_driver = :http_client
+Handsoap.http_driver = :net_http
 
 module Viewpoint
   module EWS

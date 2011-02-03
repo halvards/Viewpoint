@@ -41,9 +41,10 @@ module Viewpoint
           end
         end
 
-        def self.set_auth(user,pass)
+        def self.set_auth(user, pass, ntlm_domain = nil)
           @@user = user
           @@pass = pass
+          @@ntlm_domain = ntlm_domain
         end
 
         # Turn off parsing and just return the soap response
@@ -84,7 +85,7 @@ module Viewpoint
 
         def on_after_create_http_request(req)
           begin
-            req.set_auth @@user, @@pass
+            req.set_auth @@user, @@pass, @@ntlm_domain
           rescue NameError => e
             raise EwsLoginError, "Please remember to set your credential information."
           end

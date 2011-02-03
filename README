@@ -1,4 +1,19 @@
 --------------------------------------------------------------------------
+FORK SPECIFIC INFORMATION:
+
+This fork contains a quick and dirty hack to allow for NTLM authentication
+with the domain passed as a separate authentication parameter.
+
+Rather than using httpclient as the HTTP driver, it uses net_http, and
+version 0.0.1 of the ruby-ntlm gem is used to add NTLM support to the
+Net::HTTP class.
+
+It also requires a fork of the handsoap gem, which is forked off version
+1.1.8 of the original library.
+
+Stay away from this fork unless you need this hack.
+
+--------------------------------------------------------------------------
                    Viewpoint for Exchange Web Services
                 http://github.com/zenchild/Viewpoint/wiki
 --------------------------------------------------------------------------

@@ -102,9 +102,9 @@ module Viewpoint
       # Set the SOAP username and password.
       # @param [String] user The user name
       # @param [String] pass The password
-      def self.set_auth(user,pass)
+      def self.set_auth(user, pass, ntlm_domain = nil)
         @@user = user
-        SOAP::ExchangeWebService.set_auth(user,pass) && true
+        SOAP::ExchangeWebService.set_auth(user, pass, ntlm_domain) && true
       end
 
       # Set the http driver that the SOAP back-end will use.
